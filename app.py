@@ -14,7 +14,8 @@ from dotenv import load_dotenv
 # Load environment variables
 load_dotenv()
 genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = os.getenv("GOOGLE_APPLICATION_CREDENTIALS")
+# os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = os.getenv("GOOGLE_APPLICATION_CREDENTIALS")
+google_credentials = st.secrets["GOOGLE_CREDENTIALS"] 
 
 # Function to extract text from uploaded PDFs
 def get_pdf_text(pdf_docs):
